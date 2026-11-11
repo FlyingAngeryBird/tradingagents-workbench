@@ -1,8 +1,8 @@
 name: Release assets
 
+# Workbench modification: workbench-v* releases use GitHub's source archives.
 # Builds the source archive and wheel from the release tag and attaches them to
-# the GitHub release, so a version can be installed without cloning:
-#   pip install https://github.com/TauricResearch/TradingAgents/releases/download/<tag>/<wheel>
+# a framework-version release.
 # Run it by hand with a tag to attach builds to an earlier release.
 
 on:
@@ -22,6 +22,7 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ startsWith(inputs.tag || github.event.release.tag_name, 'v') }}
     name: build and attach
     runs-on: ubuntu-latest
     permissions:

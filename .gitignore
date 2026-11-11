@@ -1,3 +1,4 @@
+# Modified for TradingAgents Workbench. Excludes local workstation data and credentials.
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -218,6 +219,17 @@ __marimo__/
 # Cache
 **/data_cache/
 
-# Enterprise env file (secrets) and generated run reports
-.env.enterprise
+# Local credentials, environment backups, and example Docker bind mount
+.env.*
+!.env.example
+!.env.enterprise.example
+.tradingagents/
+/data/
+chatgpt-auth.json
+jobs.sqlite3*
+
+# Generated run output and macOS metadata
 reports/
+/results/
+/eval_results/
+.DS_Store

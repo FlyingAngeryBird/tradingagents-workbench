@@ -1,3 +1,4 @@
+# Modified for TradingAgents Workbench. Excludes local workstation data and credentials from build contexts.
 .git
 .venv
 **/.env*
@@ -13,3 +14,13 @@ results
 eval_results
 Dockerfile
 docker-compose.yml
+**/reports
+**/data_cache
+**/.tradingagents
+data
+**/chatgpt-auth.json
+**/jobs.sqlite3*
+**/.pytest_cache
+**/.ruff_cache
+**/__pycache__
+**/.DS_Store

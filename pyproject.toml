@@ -1,3 +1,4 @@
+# Modified for TradingAgents Workbench. Adds the local Web entry point and static resources.
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
@@ -44,6 +45,7 @@ bedrock = [
 
 [project.scripts]
 tradingagents = "cli.main:app"
+tradingagents-web = "tradingagents.web.server:main"
 
 [tool.setuptools.dynamic]
 version = {attr = "tradingagents.__version__"}
@@ -54,6 +56,7 @@ include = ["tradingagents*", "cli*"]
 [tool.setuptools.package-data]
 cli = ["static/*"]
 tradingagents = ["assets/*.svg"]
+"tradingagents.web" = ["static/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

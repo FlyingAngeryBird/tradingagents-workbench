@@ -1,8 +1,9 @@
+# Workbench modification: test source branches, browser report parsing, and installed Web assets.
 name: CI
 
 on:
   push:
-    branches: [main, 'v[0-9]+.[0-9]+.[0-9]+']
+    branches: ['**']
   pull_request:
 
 concurrency:
@@ -47,9 +48,19 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install .
-          # Catches undeclared runtime deps (e.g. #994 python-dotenv): a bare
-          # install must import the package and the CLI module.
-          python -c "import tradingagents, cli.main; print('clean-install import OK')"
+          cd "$RUNNER_TEMP"
+          tradingagents-web --help
+          python -c "import cli.main; from tradingagents.web.server import STATIC; assert (STATIC / 'index.html').is_file() and (STATIC / 'app.js').is_file()"
+
+  web-tests:
+    name: browser report parser
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+      - run: node --test tests/test_web_report.mjs
 
   lint:
     name: ruff (strict, full repo)

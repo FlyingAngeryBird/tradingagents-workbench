@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#122e26"><title>研究工作台 · TradingAgents</title>
+<link rel="icon" href="/static/mark.svg">
+<link rel="stylesheet" href="/static/style.css"><link rel="stylesheet" href="/static/workflows.css"><link rel="stylesheet" href="/static/settings.css">
+<link rel="stylesheet" href="/static/progress.css"><link rel="stylesheet" href="/static/report.css">
+</head>
+<body>
+<a href="#content" class="skip">跳到主要内容</a>
+<aside id="rail" class="rail" aria-label="工作台导航">
+<a class="brand" href="#overview"><img src="/static/mark.svg" alt="" width="34" height="34"><strong>TradingAgents</strong></a>
+<nav id="sidebar-nav"></nav>
+<div class="rail-footer"><span class="local-icon" data-icon="terminal"></span><div><strong>本地工作空间</strong><small>Local workspace</small></div><span class="online-dot"></span></div>
+</aside>
+<button id="shade" hidden aria-label="关闭导航"></button>
+<div class="main-shell">
+<header class="topbar"><div class="crumb"><button id="menu" aria-label="打开导航" aria-expanded="false" data-icon="menu"></button><span data-icon="panel"></span><span>工作空间</span><i>/</i><strong id="crumb-name">工作台总览</strong></div><div class="top-right"><span id="connection" role="status"><i></i>连接中</span><time id="today"></time></div></header>
+<main id="content" tabindex="-1"></main>
+</div>
+<script type="module" src="/static/app.js"></script></body></html>

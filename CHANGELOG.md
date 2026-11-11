@@ -1,3 +1,15 @@
+# Workbench release notes
+
+## workbench-v0.1.0 · 中文本机研究工作台
+
+首个社区工作台版本基于 TradingAgents 提交 `9fa1196`。可在浏览器选择标的、研究日期、分析师和模型，查看多空辩论、风险评估与历史报告，运行和续跑历史回测。附带本机配置、任务记录与 Markdown / HTML 报告导出。使用者自行配置模型及数据服务。
+
+从本次发布下载源码，解压后按快速入门启动。工作台的标签与上游框架的版本分别记录。[安装与第一份报告](docs/QUICKSTART.md) · [项目来源与署名](ATTRIBUTION.md)
+
+## Upstream framework changelog
+
+The Workbench edition added the release notes above. The following history is from TauricResearch/TradingAgents.
+
 # Changelog
 
 All notable changes to TradingAgents are documented here.

@@ -1,0 +1,58 @@
+.ta-settings {
+  --st-fg: #182c27; --st-muted: #596e64; --st-line: #dce4df; --st-accent: #087358;
+  color: var(--st-fg); font: inherit; width: 100%; min-width: 0;
+}
+.ta-settings *, .ta-settings *::before, .ta-settings *::after {box-sizing: border-box}
+.ta-settings [hidden] {display: none !important}
+.ta-settings button, .ta-settings input, .ta-settings select, .ta-settings textarea {font: inherit}
+.ta-settings button, .ta-settings summary {cursor: pointer}
+.ta-settings .st-toolbar {position: sticky; top: 0; z-index: 3; background: #f4f6f5; display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 6px 14px}
+.ta-settings .st-tabs {display: flex; flex-wrap: wrap; gap: 3px; background: #eaf0ec; padding: 4px; border-radius: 8px}
+.ta-settings .st-tab {
+  background: transparent; color: var(--st-muted); border: 1px solid transparent; border-radius: 5px;
+  padding: 8px 14px; font-size: 13px; line-height: 18px; font-weight: 600; min-height: 34px;
+}
+.ta-settings .st-tab[aria-pressed=true] {background: white; color: var(--st-fg); box-shadow: 0 1px 3px #153d2616; border-color: #dae5dd}
+.ta-settings .st-save-area, .ta-settings .st-actions {display: flex; gap: 10px; align-items: center; flex-wrap: wrap}
+.ta-settings .st-save {background: var(--st-accent); color: #fff; padding: 9px 17px; border: 1px solid var(--st-accent); font-weight: 600; font-size: 13px; border-radius: 7px}
+.ta-settings .st-save:disabled {opacity: .6; cursor: default}
+.ta-settings .st-feedback {font-size: 12px; color: var(--st-muted); overflow-wrap: anywhere; max-width: 26em}
+.ta-settings .st-feedback.st-error {color: #a03430}
+.ta-settings .st-card, .ta-settings .st-details {margin: 0 0 14px; border: 1px solid var(--st-line); border-radius: 10px; background: white; min-width: 0}
+.ta-settings .st-card-head {padding: 18px 21px 0}
+.ta-settings .st-card-head h3 {margin: 0; font-size: 16px; line-height: 1.5; font-weight: 650; color: var(--st-fg)}
+.ta-settings .st-card-head p {margin: 5px 0 0; line-height: 1.55; font-size: 13px; color: var(--st-muted)}
+.ta-settings .st-fields {padding: 16px 21px 21px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 15px 20px; align-items: start}
+.ta-settings .st-field {display: grid; gap: 6px; align-content: start; min-width: 0; margin: 0}
+.ta-settings .st-label {font-size: 12px; font-weight: 600; color: #344e41; margin: 0; line-height: 1.4; overflow-wrap: anywhere}
+.ta-settings .st-field input:not([type=checkbox]), .ta-settings .st-field select, .ta-settings .st-field textarea, .ta-settings .st-callback input {
+  min-width: 0; width: 100%; border: 1px solid #cddad1; border-radius: 6px; background: #fcfdfc; color: var(--st-fg);
+  padding: 9px 11px; line-height: 19px; font-size: 13px; font-weight: 400; min-height: 39px;
+}
+.ta-settings .st-field textarea {resize: vertical}
+.ta-settings .st-field input[type=checkbox] {margin: 7px 0; width: 19px; height: 19px; accent-color: var(--st-accent)}
+.ta-settings :focus-visible {outline: 2px solid #31876a; outline-offset: 2px}
+.ta-settings input::placeholder {color: #76877b}
+.ta-settings .st-field small {line-height: 1.4; font-size: 11px; color: var(--st-muted); overflow-wrap: anywhere}
+.ta-settings .st-wide {grid-column: 1 / -1}
+.ta-settings .st-tier-layout {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px}
+.ta-settings .st-compact .st-fields {grid-template-columns: minmax(0,1fr)}
+.ta-settings .st-details summary {padding: 15px 21px; color: var(--st-fg); font-size: 13px; font-weight: 600}
+.ta-settings .st-details[open] summary {border-bottom: 1px solid var(--st-line)}
+.ta-settings .st-key-jump {justify-self: start; color: var(--st-accent); background: #e9f5ee; border: 0; border-radius: 5px; padding: 6px 10px; font-size: 12px; font-weight: 600}
+.ta-settings .st-key-line {display: flex; gap: 4px}
+.ta-settings .st-remove {font-size: 12px; flex-shrink: 0; border: 0; border-radius: 5px; color: var(--st-muted); background: #f3f6f3}
+.ta-settings .st-account {display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px}
+.ta-settings .st-account-status {font-size: 13px; color: var(--st-muted)}
+.ta-settings .st-ghost {border: 1px solid var(--st-line); border-radius: 5px; padding: 7px 11px; color: var(--st-accent); background: white; font-size: 12px; text-decoration: none}
+.ta-settings .st-callback {max-width: 100%; font-size: 12px; color: var(--st-muted)}
+.ta-settings .st-callback input {margin-block: 5px}
+@media (max-width: 760px) {
+  .ta-settings .st-tier-layout {grid-template-columns: 1fr; gap: 0}
+  .ta-settings .st-tab {padding-inline: 9px}
+}
+@media (max-width: 540px) {
+  .ta-settings .st-fields {grid-template-columns: minmax(0,1fr); padding: 14px}
+  .ta-settings .st-card-head {padding: 14px 14px 0}
+  .ta-settings .st-toolbar {gap: 8px}
+}
